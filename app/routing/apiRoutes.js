@@ -30,8 +30,9 @@ module.exports = {
       console.log(numberArray);
       let bestFriend = {};
       let bestFriendDiff = 1000;
-      whosYourFriend(personObject, friendsArray, bestFriendDiff);
+      console.log(whosYourFriend(personObject, friendsArray, bestFriendDiff));
       friendsArray.push(personObject);
+
       console.log(friendsArray);
       console.log(personObject);
       console.log(bestFriend);
@@ -56,7 +57,7 @@ function whosYourFriend(you, friendsArray, bestFriendDiff) {
       bestFriendDiff = totalDiff;
       console.log(`this is the best friend ${bestFriend}`);
       console.log(`after change ${bestFriendDiff}`);
-      return bestFriend;
+      return [bestFriend, bestFriendDiff];
     }
   });
 }
