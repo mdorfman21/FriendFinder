@@ -11,3 +11,5 @@ on apiroues.js
 
 on friends.js
 -im not sure what this page is for
+
+deploying to heroku
