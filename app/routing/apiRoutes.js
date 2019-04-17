@@ -28,10 +28,16 @@ module.exports = {
         scores: numberArray
       };
       console.log(numberArray);
-      let bestFriend = {};
-      let bestFriendDiff = 1000;
-      console.log(whosYourFriend(personObject, friendsArray, bestFriendDiff));
+      let bestFriend;
+      let bestFriendDiff;
+      console.log(
+        whosYourFriend(personObject, friendsArray, bestFriendDiff, bestFriend)
+      );
       friendsArray.push(personObject);
+
+      [bestFriend, bestFriendDiff] = whosYourFriend(personObject, friendsArray);
+
+      // console.log("results", val1, val2);
 
       console.log(friendsArray);
       console.log(personObject);
@@ -43,7 +49,12 @@ module.exports = {
   }
 };
 
-function whosYourFriend(you, friendsArray, bestFriendDiff) {
+function whosYourFriend(
+  you,
+  friendsArray,
+  bestFriendDiff = 1000,
+  bestFriend = {}
+) {
   friendsArray.forEach(friend => {
     console.log(`this is the friend ${friend.name}`);
     let totalDiff = 0;
@@ -57,7 +68,7 @@ function whosYourFriend(you, friendsArray, bestFriendDiff) {
       bestFriendDiff = totalDiff;
       console.log(`this is the best friend ${bestFriend}`);
       console.log(`after change ${bestFriendDiff}`);
-      return [bestFriend, bestFriendDiff];
     }
   });
+  return [bestFriend, bestFriendDiff];
 }

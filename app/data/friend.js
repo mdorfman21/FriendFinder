@@ -1,7 +1,11 @@
-let friends = require("../routing/apiRoutes");
+// let friends = require("../routing/apiRoutes");
 
-let data = friends.friendsArray;
+// let data = friends.friendsArray;
 
-console.log(data);
+// console.log(data);
 
-module.exports = data;
+var friends = {
+  friendsArray: []
+};
+
+module.exports = friends;
