@@ -3,7 +3,7 @@
 ISSUES -
 on survey page
 -cant get values of radio buttons
--unsure how to post the results
+-unsure how to post the results \$.POST('api/friends;')
 -unsure about the modal
 
 on apiroues.js
