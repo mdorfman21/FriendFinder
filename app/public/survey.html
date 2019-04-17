@@ -141,12 +141,9 @@
       $("#submit").on("click", e => {
         e.preventDefault();
         let scores = [];
-        console.log($("#defaultInline3").is(":checked"));
         $("#holds-questions")
           .find("input[type='radio']")
           .each(function() {
-            console.log($(this));
-            console.log($(this).prop("checked"));
             if ($(this).is(":checked") == true) {
               scores.push($(this).val());
             }
