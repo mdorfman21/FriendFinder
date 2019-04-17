@@ -53,13 +53,12 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <div id="holds-questions">
+          <div id="holds-questions" data-toggle="buttons" class="btn-group">
             <ol>
               <li>
                 <h6>Question</h6>
                 <div class="custom-control custom-radio custom-control-inline">
                   <br />
-
                   <input
                     type="radio"
                     class="custom-control-input"
@@ -137,17 +136,22 @@
       integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
       crossorigin="anonymous"
     ></script>
+
     <script>
       $("#submit").on("click", e => {
         e.preventDefault();
         let scores = [];
+        console.log($("#defaultInline3").is(":checked"));
         $("#holds-questions")
-          .find('input[type="radio"]')
-          .each(() => {
-            if ($(this).prop("checked") == true) {
+          .find("input[type='radio']")
+          .each(function() {
+            console.log($(this));
+            console.log($(this).prop("checked"));
+            if ($(this).is(":checked") == true) {
               scores.push($(this).val());
             }
           });
+
         console.log(scores);
       });
     </script>
