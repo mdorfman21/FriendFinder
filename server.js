@@ -7,8 +7,8 @@ let app = express();
 
 let PORT = process.env.PORT || 8080;
 
+routes.routing(app);
+html(app);
 app.listen(PORT, () => {
   console.log(`listening on http://localhost:${PORT}`);
-  routes.routing(app);
-  html(app);
 });

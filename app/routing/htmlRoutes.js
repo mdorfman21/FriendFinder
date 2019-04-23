@@ -14,8 +14,8 @@ module.exports = function(app) {
     res.sendFile(reqPath);
   });
 
-  // app.get("*", (req, res) => {
-  //   let reqPath = path.join(__dirname, "../public/home.html");
-  //   res.sendFile(reqPath);
-  // });
+  app.get("*", (req, res) => {
+    let reqPath = path.join(__dirname, "../public/home.html");
+    res.sendFile(reqPath);
+  });
 };

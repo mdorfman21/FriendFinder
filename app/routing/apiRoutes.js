@@ -8,47 +8,39 @@ let app = express();
 let friendsArray = [];
 module.exports = {
   routing: function(app) {
+    app.use(
+      bodyParser.urlencoded({
+        extended: true
+      })
+    );
     app.use(bodyParser.json());
 
     app.get("/api/friends", (req, res) => {
-      res.send(data);
+      res.send(bestFriend);
     });
 
     app.post("/api/friends", (req, res) => {
       let userAnswer = req.body;
-      let numberArray = [];
       console.log(
         "this is the req body" + util.inspect(userAnswer, false, null, true)
       );
-      for (let prop in userAnswer[0]) {
-        if (prop.includes("question")) {
-          numberArray.push(userAnswer[0][prop]);
-        }
-      }
-      // let personObject = {
-      //   name: userAnswer[0].name,
-      //   image: userAnswer[0].image,
-      //   scores: numberArray
-      // };
-      console.log(numberArray);
+
+      let personObject = {
+        name: userAnswer.name,
+        image: userAnswer.image,
+        scores: userAnswer.scores
+      };
       let bestFriend;
       let bestFriendDiff;
-      // console.log(
-      //   whosYourFriend(personObject, friendsArray, bestFriendDiff, bestFriend)
-      // );
-      // friendsArray.push(personObject);
+      [bestFriend, bestFriendDiff] = whosYourFriend(
+        personObject,
+        data.friendsArray
+      );
+      data.friendsArray.push(personObject);
+      res.json(bestFriend);
 
-      // [bestFriend, bestFriendDiff] = whosYourFriend(personObject, data);
-
-      // console.log("results", val1, val2);
-
-      // console.log(friendsArray);
-      // console.log(personObject);
-      // console.log(bestFriend);
-      // console.log(bestFriendDiff);
+      console.log(personObject.scores);
     });
-
-    friendsArray: friendsArray;
   }
 };
 
