@@ -49,9 +49,10 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <h2 id="best-friend-name"></h2>
-          <img id="best-friend-image" src="" alt="" />
-          <div class="modal-body" id="modal-body"></div>
+          <h2 id="best-friend-name" class="text-center"h2>
+          <div class="modal-body" id="modal-body">
+              <img id="best-friend-image" src="" alt="best friend image" class="text-center" />
+          </div>
           <div class="modal-footer">
             <button
               type="button"
@@ -60,7 +61,6 @@
             >
               Close
             </button>
-            <button type="button" class="btn btn-primary">Save changes</button>
           </div>
         </div>
       </div>
@@ -770,11 +770,12 @@
               </li>
             </ol>
           </div>
+          <input class="btn btn-primary text-center" type="submit" value="Submit" id="submit" />
         </div>
-        <div class="col-md-"></div>
+        <div class="col-md-4"></div>
       </div>
     </div>
-    <input class="btn btn-primary" type="submit" value="Submit" id="submit" />
+    
 
     <script>
       $("input").on("click", e => {
