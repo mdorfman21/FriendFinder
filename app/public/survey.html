@@ -9,6 +9,11 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     />
+    <link rel="stylesheet" href="../data/css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Rubik|Varela+Round"
+      rel="stylesheet"
+    />
     <script
       src="https://code.jquery.com/jquery-3.4.0.min.js"
       integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
@@ -60,18 +65,34 @@
         </div>
       </div>
     </div>
-    <h1>Survey</h1>
+    <h1 class="text-center">Friend Survey</h1>
 
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
-          Name: <input type="text" name="name" id="name" /> <br />
-          Img Link:
-          <input type="text" name="image" id="image" />
+        <div class="col-md-4"></div>
+        <div class="col-md-4 text-center use-me-for-font">
+          Name:
+          <input
+            type="text"
+            name="name"
+            id="name"
+            class="form-control form-control-sm"
+            <br
+          />
+          Image Link:
+          <input
+            type="text"
+            name="image"
+            id="image"
+            class="form-control form-control-sm"
+          />
+          <br />
         </div>
+        <div class="col-md-4"></div>
       </div>
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 text-center">
           <div id="holds-questions">
             <ol>
               <li>
@@ -750,6 +771,7 @@
             </ol>
           </div>
         </div>
+        <div class="col-md-"></div>
       </div>
     </div>
     <input class="btn btn-primary" type="submit" value="Submit" id="submit" />
